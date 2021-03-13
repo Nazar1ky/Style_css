@@ -83,7 +83,7 @@ select {
 /*_____________________________________________________________________________________*/
 
 body{
-	background-color: rgba(0, 0, 0, 0.935);
+	background-color: green;
 	color: #fff;
 }
 
@@ -261,7 +261,4 @@ footer{
 
 .chtooto2{
 	border-left: 1px solid #fff;
-}
-h4{
-color:red;	
 }
