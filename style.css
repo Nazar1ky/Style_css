@@ -1,17 +1,264 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+/* ___ Обнуления ___ */
 
-a {
-    text-decoration: none;
-    color: black;
-    font-family: montserrat;
-    display: flex;
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-@media (max-width: 1048px){
-    a:hover {
-        color: #3498db;
-        transition: all 0.5s ease-out;
-        text-align: center;
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+	padding: 0;
+}
 
-    }
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+li{
+	list-style-type: none;
+}
+ul{
+		padding-left: 0;
+}
+
+a{
+	text-decoration: none;
+}
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+	margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Загружаем шрифты */
+
+@font-face {
+	font-family: ***;
+	src: url(../fonts/***);
+}
+
+/*_____________________________________________________________________________________*/
+
+body{
+	background-color: rgba(0, 0, 0, 0.935);
+	color: #fff;
+}
+
+
+
+
+section{
+	font-size: 80px;
+	font-weight: bold;
+	transition: all 200ms;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	display: grid;
+	place-items: center;
+	z-index: 1;
+	cursor: default;
+}
+
+.logo{
+
+}
+
+.vk-token span{
+	color: #fff;
+	font-family: 'Shojumaru', cursive;
+	transition: all 250ms;
+}
+
+.vk-token span:hover{
+	text-shadow:	0 0 10px #0698a5,
+					0 0 30px #0698a5,
+					0 0 80px #0698a5,
+					0 0 120px #0698a5,
+					0 0 200px #0698a5;
+}
+
+
+
+
+#enter-token{
+	background-color: rgba(255, 255, 255, 0.1);
+	text-align: center;
+	width: 70%;
+	margin: auto;
+	margin-top: 3%;
+	border-radius: 7px;
+	font-size: 17px;
+	padding-top: 25px;
+	font-family: Trebuchet MS;
+}
+
+#enter{
+	display: inline-block;
+	color: white;
+	font-weight: 700;
+	text-decoration: none;
+	user-select: none;
+	outline: none;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	transition: 0.2s;
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 4px;
+}
+
+#info{
+	padding-left: 35px;
+	padding-right: 35px;
+}
+
+#enter:hover{
+	background: rgba(255,255,255,.2);
+}
+
+#enter:active{
+	background: white;
+	color: #000;
+}
+
+input{
+	display: inline-block;
+	color: white;
+	font-weight: 700;
+	text-decoration: none;
+	user-select: none;
+	outline: none;
+	border: 2px solid #fff;
+	border-radius: 6px;
+	transition: 0.2s;
+	color: #000;
+	margin-top: 15px;
+	font-family: Times New Roman;
+	width: 65%;
+}
+
+.help-token{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#enter-token a{
+	color: #fff;
+	margin-top: 25px;
+}
+
+#enter-token a:hover{
+	text-decoration: underline;
+}
+
+
+
+footer{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 70px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	display: block;
+}
+
+.menu{
+	text-align: center;
+}
+
+.menu div{
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 20%;
+	float: left;
+	padding-top: 22.5px;
+	padding-bottom: 22.5px;
+	font-size: 16px;
+}
+
+.menu div:hover{
+	background-color: rgba(255, 255, 255, 0.05);
+	transition-duration: .125s
+}
+
+.menu a{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-decoration: none;
+	color: #fff; 
+}
+
+
+
+
+.friends{
+	border-right: 1px solid #fff;
+}
+
+.profile{
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+.messages{
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+.chtooto1{
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+}
+
+.chtooto2{
+	border-left: 1px solid #fff;
 }
