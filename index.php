@@ -1,20 +1,36 @@
-<?php
-$login = 'nazar.iurchak@gmail.com'; //Логин
-$pass = 'www300913'; //Пароль
-$audio = '528174818_456239037'; //id аудио
-$auth = curl( 'https://oauth.vk.com/token?grant_type=password&cl..'. $login     
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <p>AutoStatus</p>
+    </header>
+</body>
+</html>
 
-.'&password='. $pass ); //Авторизация
-$json = json_decode( $auth, true );
-$access_token = $json['access_token'];
-echo "Статус установлен!";
-$statusSet = curl( 'https://api.vk.com/method/status.set?audio='. urlencode( $audio ) .'&access_token='. $access_token );
-function curl( $url ) {
-$ch = curl_init( $url );
-curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
-curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
-$response = curl_exec( $ch );
-curl_close( $ch );
-return $response;
-}
+<?php
+$token ='cb0b2d697be462a6d650182d71bbf3812aa1de2ec0a36ede883b5bee607e216171a197238d8ba59e25105';
+
+$base = file('base.txt');
+
+$rand = mt_rand(0,3);
+
+$result = $base[$rand];
+
+$params = [
+    'text' => $result,
+    'access_token' => $token,
+    'v' => '5.130'
+];
+
+$params = http_build_query($params);
+
+$query = file_get_contents('https://api.vk.com/method/status.set?'.$params);
+
+$result = json_decode($query,true);
+
+print_r($result);
+?>
